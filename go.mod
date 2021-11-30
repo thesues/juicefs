@@ -3,7 +3,7 @@ module github.com/juicedata/juicefs
 go 1.16
 
 require (
-	cloud.google.com/go v0.39.0
+	cloud.google.com/go v0.46.3
 	github.com/Arvintian/scs-go-sdk v1.1.0
 	github.com/Azure/azure-sdk-for-go v11.1.1-beta+incompatible
 	github.com/Azure/go-autorest/autorest v0.11.17 // indirect
@@ -20,7 +20,9 @@ require (
 	github.com/deckarep/golang-set v1.7.1 // indirect
 	github.com/dnaeon/go-vcr v1.2.0 // indirect
 	github.com/emersion/go-webdav v0.3.0
-	github.com/go-redis/redis/v8 v8.4.0
+	github.com/fsnotify/fsnotify v1.5.1 // indirect
+	github.com/go-redis/redis v6.15.9+incompatible // indirect
+	github.com/go-redis/redis/v8 v8.11.4
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/google/btree v1.0.1
@@ -33,24 +35,27 @@ require (
 	github.com/huaweicloud/huaweicloud-sdk-go-obs v3.21.1+incompatible
 	github.com/hungys/go-lz4 v0.0.0-20170805124057-19ff7f07f099
 	github.com/jcmturner/gokrb5/v8 v8.4.2
+	github.com/journeymidnight/autumn v0.0.0-20211117221904-ce50b4e7f497 // indirect
 	github.com/juicedata/godaemon v0.0.0-20210629045518-3da5144a127d
 	github.com/juju/ratelimit v1.0.1
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/ks3sdklib/aws-sdk-go v1.0.12
 	github.com/lib/pq v1.8.0
-	github.com/mattn/go-isatty v0.0.12
+	github.com/mattn/go-isatty v0.0.14
 	github.com/mattn/go-sqlite3 v2.0.1+incompatible
 	github.com/minio/cli v1.22.0
 	github.com/minio/minio v0.0.0-20210206053228-97fe57bba92c
 	github.com/minio/minio-go v6.0.14+incompatible
 	github.com/nats-io/nats-server/v2 v2.6.2 // indirect
 	github.com/ncw/swift v1.0.53
+	github.com/onsi/ginkgo v1.16.5 // indirect
+	github.com/onsi/gomega v1.17.0 // indirect
 	github.com/pengsrc/go-shared v0.2.0 // indirect
 	github.com/pingcap/log v0.0.0-20210317133921-96f4fcab92a4
 	github.com/pkg/errors v0.9.1
 	github.com/pkg/sftp v1.10.0
 	github.com/pquerna/ffjson v0.0.0-20190930134022-aa0246cd15f7 // indirect
-	github.com/prometheus/client_golang v1.9.0
+	github.com/prometheus/client_golang v1.11.0
 	github.com/prometheus/client_model v0.2.0
 	github.com/qiniu/api.v7/v7 v7.8.0
 	github.com/satori/go.uuid v1.2.0
@@ -67,11 +72,11 @@ require (
 	github.com/viki-org/dnscache v0.0.0-20130720023526-c70c1f23c5d8
 	github.com/yunify/qingstor-sdk-go v2.2.15+incompatible
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e
-	golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4
-	golang.org/x/oauth2 v0.0.0-20190517181255-950ef44c6e07
-	golang.org/x/sys v0.0.0-20210823070655-63515b42dcdf
+	golang.org/x/net v0.0.0-20211116231205-47ca1ff31462
+	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
+	golang.org/x/sys v0.0.0-20211117180635-dee7805ff2e1
 	golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1
-	google.golang.org/api v0.5.0
+	google.golang.org/api v0.13.0
 	gopkg.in/kothar/go-backblaze.v0 v0.0.0-20210124194846-35409b867216
 	xorm.io/xorm v1.0.7
 )

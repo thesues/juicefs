@@ -34,7 +34,6 @@ import (
 
 	"github.com/juicedata/juicefs/pkg/chunk"
 	"github.com/juicedata/juicefs/pkg/meta"
-	"github.com/juicedata/juicefs/pkg/metric"
 	"github.com/juicedata/juicefs/pkg/object"
 	"github.com/juicedata/juicefs/pkg/usage"
 	"github.com/juicedata/juicefs/pkg/utils"
@@ -67,9 +66,6 @@ func exposeMetrics(m meta.Meta, c *cli.Context) string {
 		logger.Fatalf("metrics format error: %v", err)
 	}
 
-	meta.InitMetrics()
-	vfs.InitMetrics()
-	go metric.UpdateMetrics(m)
 	http.Handle("/metrics", promhttp.HandlerFor(
 		prometheus.DefaultGatherer,
 		promhttp.HandlerOpts{
@@ -275,10 +271,7 @@ func mount(c *cli.Context) error {
 	}
 	installHandler(mp)
 	v := vfs.NewVFS(conf, m, store)
-	metricsAddr := exposeMetrics(m, c)
-	if c.IsSet("consul") {
-		metric.RegisterToConsul(c.String("consul"), metricsAddr, mp)
-	}
+
 	if d := c.Duration("backup-meta"); d > 0 {
 		go vfs.Backup(m, blob, d)
 	}
